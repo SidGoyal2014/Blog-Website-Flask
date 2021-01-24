@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/contact-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Add Posts</h1>
+              <span class="subheading">You can add a new post here</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+          <form name="sentMessage" id="contactForm" action = "/add" method="post" novalidate>
+              <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                      <label>Title</label>
+                      <input type="text" class="form-control" placeholder="title" id="title" name='title' required data-validation-required-message="Please enter title.">
+                      <p class="help-block text-danger"></p>
+                  </div>
+              </div>
+
+              <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                      <label>Sub-Heading</label>
+                      <input type="text" class="form-control" placeholder="Sub-heading" id="subheading" name="subheading" required data-validation-required-message="Please enter subheading">
+                      <p class="help-block text-danger"></p>
+                  </div>
+              </div>
+
+              <div class="control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <label>Slug</label>
+                      <input type="text" class="form-control" placeholder="slug" name="slug" id="phone" required data-validation-required-message="Please enter slug.">
+                      <p class="help-block text-danger"></p>
+                  </div>
+              </div>
+
+              <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                      <label>Content</label>
+                      <textarea rows="5" class="form-control" placeholder="content" name = "content" id="message" required data-validation-required-message="Please enter content"></textarea>
+                      <p class="help-block text-danger"></p>
+                  </div>
+              </div>
+              <br>
+              <div id="success"></div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
