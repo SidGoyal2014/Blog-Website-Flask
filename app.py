@@ -32,7 +32,8 @@ app.config.update(
 
 mail = Mail(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/tech blog- flask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://eurek8d7_common:common#123?@md-in-30.webhostbox.net:2083/eurek8d7_techblogflask'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/tech blog- flask'
 db = SQLAlchemy(app)
 
 class Contacts(db.Model):
