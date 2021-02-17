@@ -19,7 +19,7 @@ with open('config.json', 'r') as c:
 app = Flask(__name__)
 
 app.secret_key = "super_secret_key"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://eurek8d7_common:common#123?@md-in-30.webhostbox.net:2083/eurek8d7_techblogflask'
+app.config['SQLALCHEMY_DATABASE_URI'] = '[Database Credentials]'
 app.config["UPLOAD_FOLDER"] = params_1["upload_location"]
 
 SQLALCHEMY_POOL_RECYCLE=90
