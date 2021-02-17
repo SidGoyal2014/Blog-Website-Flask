@@ -1,20 +1,20 @@
 {
     "social_media_links":
     {
-        "fb_url" : "https://www.facebook.com/techoutflow",
+        "fb_url" : "https://www.facebook.com/sidgoyal2014",
         "tw_url" : "https://twitter.com/sidgoyal2014",
         "gt_url" : "https://github.com/SidGoyal2014"
     },
 
     "credential_details":
     {
-        "gmail_username" : "",
-        "gmail_password" : ""
+        "gmail_username" : "adityaban2018@gmail.com",
+        "gmail_password" : "*adityaban#"
     },
 
     "params":
     {
         "no_of_posts" : 5,
-        "upload_location" : "E:\\python related\\flask\\Projects\\p2\\static"
+        "upload_location" : "E:\\python related\\flask\\Projects\\p2\\static\\img"
     }
 }
