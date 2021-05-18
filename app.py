@@ -241,26 +241,31 @@ def edit(sno):
                 entry = Posts(title=title, Subheading=subheading, slug=slug, content=content,img_filename=prev_img_filename, date=datetime.now())
                 db.session.add(entry)
                 db.session.commit()
-
+                
                 # Change the filename & reflect the changes in the database
                 post3 = Posts.query.filter_by().all()
 
                 x = len(post3)
 
-                new_sno = post3[x-1].sno
+                # print(prev_img_filename)
+                if(prev_img_filename != "netaji"):
 
-                extension = prev_img_filename.split(".")
+                    new_sno = post3[x-1].sno
 
-                os.rename((params_1["upload_location"] + "\\" +prev_img_filename) , (params_1["upload_location"] + "\\" + str(new_sno) + "." + str(extension[1])))
+                    extension = prev_img_filename.split(".")
 
-                post3[x-1].img_filename = str(new_sno) + "." + str(extension[1])
+                    os.rename((params_1["upload_location"] + "\\" +prev_img_filename) , (params_1["upload_location"] + "\\" + str(new_sno) + "." + str(extension[1])))
 
-                db.session.commit()
-            
-                # Return to Dashboard
-                post4 = Posts.query.filter_by().all()
+                    post3[x-1].img_filename = str(new_sno) + "." + str(extension[1])
 
-                return render_template("dashboard.html", params=params,posts=post4)
+                    db.session.commit()
+
+                    # Return to Dashboard
+                    post4 = Posts.query.filter_by().all()
+
+                    return render_template("dashboard.html", params=params,posts=post4)
+                else:
+                    return render_template("dashboard.html", params=params, posts=post3)
 
         post3 = Posts.query.filter_by(sno=sno).first()
         return render_template("edit.html", sno=sno, params=params,post=post3)
