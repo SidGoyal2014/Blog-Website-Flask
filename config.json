@@ -15,6 +15,6 @@
     "params":
     {
         "no_of_posts" : 5,
-        "upload_location" : "E:\\python related\\flask\\Projects\\p2\\static\\img"
+        "upload_location" : "['Project Directory']\\static\\img"
     }
 }
